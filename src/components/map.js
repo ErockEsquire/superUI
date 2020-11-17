@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { Tasklist } from './tasks'
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet'
 
 export default function Map ({ scooters, position, center }) {
-  const [zoom, setZoom] = useState(14)
+  const [zoom] = useState(14)
 
   const renderScooterMarkers = () => {
     return scooters.map((scooter, index) => {

@@ -1,5 +1,4 @@
 import React, { useState  } from 'react'
-import Map from './map'
 
 export function Tasks ({ scooters, position }) {
 
@@ -9,9 +8,7 @@ export function Tasks ({ scooters, position }) {
   return (
     <section className="tasklist">
       <Tasklist scooters={scooters} setScooter={setScooter}/>
-      <div className="scooter">
-        <Task scooter={scooter}/>
-      </div>
+      <Task scooter={scooter}/>
     </section>
   )
 }
@@ -71,13 +68,12 @@ const Row = ({ scooter, setScooter }) => {
   )
 }
 
-const Task = ({ scooter }) => {
+export function Task ({ scooter }) {
   return (
     <div className="task">
       <h2>{scooter.name}</h2>
       <p>{scooter.issue}</p>
       <p>{scooter.note}</p>
-      <p>{scooter.priority}</p>
       <p>{scooter.location}</p>
     </div>
   )

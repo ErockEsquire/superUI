@@ -6,7 +6,7 @@ import { Tasks } from './components/tasks'
 import Map from './components/map'
 // import NotFound from './components/notFound'
 
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 function App() {
 
