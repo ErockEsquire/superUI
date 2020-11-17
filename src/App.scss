@@ -1,0 +1,240 @@
+$red: rgb(240, 66, 66);
+$super: #E2231A;
+$black: rgb(71, 71, 71);
+$redclear: rgba(238, 115, 115, 0.5);
+
+:root {
+  font-size: 16px;
+}
+
+.App {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
+
+.scooter {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  h2 {
+    border-bottom: 4px solid $super;
+  }
+}
+
+.tasklist {
+  display: flex;
+}
+
+.map {
+  height: 80vh;
+  width: 60vw;
+  margin: 2vh 2vw;
+}
+
+.super-logo {
+  padding: 2vh 0;
+  display: flex;
+  align-items: center;
+  svg {
+    margin: 0 2vw;
+  }
+  .super-logo__username {
+    margin: 0;
+    color: $black;
+    text-transform: uppercase;
+    font-family: 'Karla', sans-serif;
+    font-style: italic;
+  }
+}
+
+.navbar {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  right: 0;
+  list-style: none;
+  border-right: 6px solid $super;
+  box-shadow: 0 -5px 5px rgb(128, 128, 128);
+  min-width: 12vw;
+  max-width: 12rem;
+  background-color: white;
+  a {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+    transition: 300ms ease-in-out;
+    cursor: pointer;
+  }
+  svg {
+    color: $super;
+    width: 4rem;
+  }
+  a:hover {
+    background-color: $redclear;
+    transition: 300ms ease-in-out;
+  }
+}
+
+.active {
+  display: block;
+}
+
+.inactive {
+  display: none;
+}
+
+.task-table {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  border: 2px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  margin: 2vh 2vw;
+  svg {
+    height: 1rem;
+    margin: 0 .5rem;
+    transition: 300ms ease-in-out;
+  }
+  .up {
+    transform: rotate(180deg);
+    transition: 300ms;
+  }
+  .down {
+    transform: rotate(0);
+    transition: 300ms;
+  }
+  th {
+    text-transform: uppercase;
+    padding-left: .5rem;
+  }
+  .task-table__row {
+    flex: 1;
+    transition: 300ms;
+    cursor: pointer;
+  }
+  .task-table__row:hover {
+    transition: 300ms;
+    background-color: $redclear;
+  }
+  .task-table__row:first-child {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgb(100, 100, 100);
+  }
+
+  .task-table__row:last-child {
+    .task-table__row__elem.detail {
+      border-bottom: 0;
+    }
+  }
+
+  .task-table__row__elem.detail {
+    border-bottom: 1px solid $black;
+    border-right: 1px solid $black;
+    padding: .5rem;
+  }
+
+  .task-table__row__elem.detail:last-child {
+    border-right: 0;
+  }
+
+  .task-table__row__elem {
+    text-align: left;
+  }
+  .priority {
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .task-table__row__elem.detail.priority {
+    text-align: center;
+  }
+
+}
+
+.map-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+  }
+
+  #main {
+    padding-bottom: 20vh;
+  }
+
+  .task-table {
+    width: 100vw;
+    border: 2px solid rgb(100, 100, 100);
+    border-radius: 5px;
+    margin: 2vh 0;
+  }
+
+  .tasklist {
+    flex-direction: column;
+  }
+
+  .task {
+    padding: 0 1rem;
+    width: 95vw;
+  }
+
+  .navbar {
+    position: fixed;
+    height: 15vh;
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-around;
+    bottom: 0;
+    list-style: none;
+    // border-top: 6px solid $super;
+    border-right: initial;
+    box-shadow: -5px 0px 5px rgb(128, 128, 128);;
+    width: 100vw;
+    max-width: initial;
+    right: initial;
+    a {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2vw;
+      transition: 300ms ease-in-out;
+      cursor: pointer;
+    }
+    svg {
+      color: $super;
+      width: 4rem;
+    }
+    a:hover {
+      background-color: $redclear;
+      transition: 300ms ease-in-out;
+    }
+  }
+
+  .map {
+    height: 60vh;
+    width: 100vw;
+    margin: 0;
+  }
+}
